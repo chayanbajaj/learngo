@@ -2,14 +2,22 @@ package main
 
 import "log"
 
+type User struct {
+	FirstName string
+	LastName  string
+}
+
 func main() {
-	// Common Syntax to make map
-	// varName := make(map[keyDataType]dataType)
+	myMap := make(map[string]User)
 
-	myMap := make(map[string]int)
-	myMap["First"] = 1
-	myMap["Second"] = 2
+	me := User{
+		FirstName: "Chayan",
+		LastName:  "Bajaj",
+	}
 
-	log.Println(myMap["First"])
-	log.Println(myMap["Second"])
+	myMap["myData"] = me
+
+	log.Println(myMap["myData"])
+	log.Println(myMap["myData"].FirstName)
+	log.Println(myMap["myData"].LastName)
 }
