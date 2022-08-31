@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	var whatToSay string
+	var i int
 	// var var_name data_type
 
-	whatToSay = "Goodbye, cruel world!"
-	fmt.Println(whatToSay)
+	i = 7
+	fmt.Println("i is set to", i)
 }
