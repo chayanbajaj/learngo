@@ -2,22 +2,18 @@ package main
 
 import "log"
 
-type User struct {
-	FirstName string
-	LastName  string
-}
-
 func main() {
-	myMap := make(map[string]User)
+	//In Go we don't use arrays, we use Slice
+	// var sliceName []dataType
 
-	me := User{
-		FirstName: "Chayan",
-		LastName:  "Bajaj",
-	}
+	var mySlice []string
 
-	myMap["myData"] = me
+	//To add an element in slice we use append method
+	// sliceName = append(sliceName, value)
 
-	log.Println(myMap["myData"])
-	log.Println(myMap["myData"].FirstName)
-	log.Println(myMap["myData"].LastName)
+	mySlice = append(mySlice, "John")
+	mySlice = append(mySlice, "Trevor")
+	mySlice = append(mySlice, "Mary")
+
+	log.Println(mySlice)
 }
