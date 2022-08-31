@@ -1,6 +1,9 @@
 package main
 
-import "log"
+import (
+	"log"
+	"sort"
+)
 
 func main() {
 	//In Go we don't use arrays, we use Slice
@@ -14,6 +17,10 @@ func main() {
 	mySlice = append(mySlice, 2)
 	mySlice = append(mySlice, 1)
 	mySlice = append(mySlice, 3)
+
+	log.Println(mySlice)
+
+	sort.Ints(mySlice)
 
 	log.Println(mySlice)
 }
