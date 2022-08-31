@@ -2,25 +2,18 @@ package main
 
 import (
 	"log"
-	"sort"
 )
 
 func main() {
-	//In Go we don't use arrays, we use Slice
-	// var sliceName []dataType
+	//We can declare and initialise in a slice as
+	// varName := []dataType{values}
 
-	var mySlice []int
+	numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 
-	//To add an element in slice we use append method
-	// sliceName = append(sliceName, value)
+	log.Println(numbers)
 
-	mySlice = append(mySlice, 2)
-	mySlice = append(mySlice, 1)
-	mySlice = append(mySlice, 3)
+	//We can also print a range of slice
 
-	log.Println(mySlice)
-
-	sort.Ints(mySlice)
-
-	log.Println(mySlice)
+	log.Println(numbers[0:2])
+	log.Println(numbers[5:8])
 }
