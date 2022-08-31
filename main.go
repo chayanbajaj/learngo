@@ -1,23 +1,30 @@
 package main
 
-import (
-	"log"
-	"time"
-)
+import "log"
 
-type User struct {
-	FirstName   string
-	LastName    string
-	PhoneNumber string
-	Age         int
-	BirthDate   time.Time
+// Receiver Syntax
+// func (receiver) function_name() return_type {}
+func (m *myStruct) printStructFirstName() string {
+	return m.FirstName
+}
+
+type myStruct struct {
+	FirstName string
 }
 
 func main() {
-	user := User{
-		FirstName: "John",
-		LastName:  "Cena",
+	var myVar myStruct
+	myVar.FirstName = "Daenerys"
+
+	myVar2 := myStruct{
+		FirstName: "Khal",
 	}
 
-	log.Println("User's name is", user.FirstName, user.LastName)
+	log.Println("myVar is", myVar.FirstName)
+	log.Println("myVar2 is", myVar2.FirstName)
+
+	//We can also use the concept of receivers in functions for struct
+
+	log.Println("myVar is set to", myVar.printStructFirstName())
+	log.Println("myVar2 is set to", myVar2.printStructFirstName())
 }
