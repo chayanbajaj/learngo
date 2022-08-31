@@ -1,15 +1,18 @@
 package main
 
-import "fmt"
+import "log"
 
 func main() {
-	whatWasSaid, theOtherThingThatWasSaid := saySomething()
-	fmt.Println("The function returned", whatWasSaid, theOtherThingThatWasSaid)
+	var myString string
+	myString = "Green"
+
+	log.Println("myString is set to", myString)
+	changeUsingPointer(&myString)
+	log.Println("After function call myString is set to", myString)
+
 }
 
-//it is possible to return more than one thing from a function
-// func function_name() (return_type_1, return_type_2, ...)
-
-func saySomething() (string, string) {
-	return "something", "else"
+func changeUsingPointer(s *string) {
+	newValue := "Red"
+	*s = newValue
 }
