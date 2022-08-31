@@ -2,29 +2,20 @@ package main
 
 import "log"
 
-// Receiver Syntax
-// func (receiver) function_name() return_type {}
-func (m *myStruct) printStructFirstName() string {
-	return m.FirstName
-}
-
-type myStruct struct {
-	FirstName string
-}
-
 func main() {
-	var myVar myStruct
-	myVar.FirstName = "Daenerys"
+	// Common Syntax to make map
+	// varName := make(map[keyDataType]dataType)
 
-	myVar2 := myStruct{
-		FirstName: "Khal",
-	}
+	myMap := make(map[string]string)
+	myMap["dog"] = "MoolchandJi"
+	myMap["cat"] = "Cassie"
 
-	log.Println("myVar is", myVar.FirstName)
-	log.Println("myVar2 is", myVar2.FirstName)
+	log.Println(myMap["dog"])
+	log.Println(myMap["cat"])
 
-	//We can also use the concept of receivers in functions for struct
+	//We can also override using key
 
-	log.Println("myVar is set to", myVar.printStructFirstName())
-	log.Println("myVar2 is set to", myVar2.printStructFirstName())
+	myMap["dog"] = "Samson"
+
+	log.Println(myMap["dog"])
 }
