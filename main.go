@@ -3,9 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	var i int
-	// var var_name data_type
+	//var_name := value to declare and initialise at the same time
+	whatWasSaid := saySomething()
+	fmt.Println(whatWasSaid)
+}
 
-	i = 7
-	fmt.Println("i is set to", i)
+//func function_name() return_type
+
+func saySomething() string {
+	return "something"
 }
