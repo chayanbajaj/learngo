@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	//var_name := value to declare and initialise at the same time
-	whatWasSaid := saySomething()
-	fmt.Println(whatWasSaid)
+	whatWasSaid, theOtherThingThatWasSaid := saySomething()
+	fmt.Println("The function returned", whatWasSaid, theOtherThingThatWasSaid)
 }
 
-//func function_name() return_type
+//it is possible to return more than one thing from a function
+// func function_name() (return_type_1, return_type_2, ...)
 
-func saySomething() string {
-	return "something"
+func saySomething() (string, string) {
+	return "something", "else"
 }
