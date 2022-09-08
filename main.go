@@ -4,10 +4,20 @@ import "log"
 
 func main() {
 
-	firstLine := "You are just too good to be true"
+	type User struct {
+		FirstName string
+		LastName  string
+		Email     string
+		Age       int
+	}
 
-	for i, l := range firstLine {
-		//this won't print the letter it will print the byte
-		log.Println(i, ":", l)
+	var users []User
+	users = append(users, User{"John", "Smith", "john@smith.com", 20})
+	users = append(users, User{"Daemon", "Targaeryan", "daemon@targaryaen.com", 32})
+	users = append(users, User{"Ana", "deArmas", "ana@dearmas.com", 26})
+	users = append(users, User{"Brad", "Pitt", "brad@pitt.com", 52})
+
+	for _, user := range users {
+		log.Println(user.LastName, user.FirstName)
 	}
 }
