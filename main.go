@@ -4,11 +4,10 @@ import "log"
 
 func main() {
 
-	animals := make(map[string]string)
-	animals["dog"] = "Fido"
-	animals["cat"] = "Fluffy"
+	firstLine := "You are just too good to be true"
 
-	for animalType, animal := range animals {
-		log.Println(animalType, animal)
+	for i, l := range firstLine {
+		//this won't print the letter it will print the byte
+		log.Println(i, ":", l)
 	}
 }
