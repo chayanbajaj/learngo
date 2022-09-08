@@ -4,13 +4,11 @@ import "log"
 
 func main() {
 
-	var isTrue bool
+	cat := "cat"
 
-	isTrue = true
-
-	if isTrue {
-		log.Println("isTrue is", isTrue)
+	if cat == "cat" {
+		log.Println("cat is", cat)
 	} else {
-		log.Println("isTrue is", isTrue)
+		log.Println("cat is not a", cat)
 	}
 }
