@@ -1,28 +1,21 @@
 package main
 
 import (
-	"errors"
-	"log"
+	"fmt"
+	"net/http"
 )
 
 func main() {
 
-	result, err := divide(100.0, 0)
-	if err != nil {
-		log.Println(err)
-		return
-	}
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		n, err := fmt.Fprintf(w, "Hello World")
+		if err != nil {
+			fmt.Println(err)
+		}
+		fmt.Println(fmt.Sprintf("Number of bytes written %d", n))
+	})
 
-	log.Println("The division result is", result)
+	_ = http.ListenAndServe(":8080", nil)
 }
 
-func divide(x, y float32) (float32, error) {
-	var result float32
-
-	if y == 0 {
-		return result, errors.New("cannot divide by zero")
-	}
-
-	result = x / y
-	return result, nil
-}
+// Go to http://localhost:8080/ in web browser
